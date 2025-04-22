@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Provo Date Night Generator</title>
+  <header>
+    <a href="index.html">Home Page</a>
+    <a href="contact.html">Contact</a>
+    <a href="scratch.html">Scratch Page</a>
+    <a href="webapp.html">Date Night Generator</a>
+  </header>
+  <style>
+    header {
+  background-color: #333;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Style for the links inside the header */
+header a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  font-size: 18px;
+  display: inline-block;
+  margin: 0 15px;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for the links */
+header a:hover {
+  background-color: #575757;
+  border-radius: 5px;
+}
+
+/* Add some space below the header to avoid overlap */
+body {
+  padding-top: 60px;
+}
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e4f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      background-color: white;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+    color: #1c82be;
+    margin-bottom: 1rem;
+    }
+    button {
+    background-color: #1a6793;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 1.5rem;
+    }
+    button:hover {
+      background-color: #db2777;
+    }
+    .section {
+      margin-bottom: 1rem;
+    }
+    .section h2 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .section p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Provo Date Night Generator 💕</h1>
+    <button onclick="generateDate()">Generate Date Night Idea</button>
+    <div id="results" style="display:none;">
+      <div class="section">
+        <h2>Fun Activity 🎯</h2>
+        <p id="activity"></p>
+      </div>
+      <div class="section">
+        <h2>Dessert Spot 🍨</h2>
+        <p id="dessert"></p>
+      </div>
+      <div class="section">
+        <h2>Lookout Spot 🌄</h2>
+        <p id="lookout"></p>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const activities = [
+        "Axe throwing at Heber Hatchets",
+        "Laser Tag at Provo Beach",
+        "Bowling at BYU Wilkinson Center",
+        "Escape Room at Getout Games",
+        "Scavenger Hunt at the Bean Life Science Museum",
+        "Swing Dancing at Peak Nights",
+        "Pickleball at the Sharom Park"
+    ];
+
+    const desserts = [
+      "Rockwell Ice Cream",
+      "Onoh's Donuts",
+      "The Wash Deserts",
+      "Penguin Bros",
+      "Swig",
+      "Açai at Brazilian Berry"
+    ];
+
+    const lookouts = [
+      "Y Mountain Trailhead",
+      "Squaw Peak Overlook",
+      "Provo Canyon Pull-Off",
+      "Buffalo Peak",
+      "Slate Canyon Overlook"
+    ];
+
+    function generateDate() {
+      const activity = activities[Math.floor(Math.random() * activities.length)];
+      const dessert = desserts[Math.floor(Math.random() * desserts.length)];
+      const lookout = lookouts[Math.floor(Math.random() * lookouts.length)];
+
+      document.getElementById("activity").textContent = activity;
+      document.getElementById("dessert").textContent = dessert;
+      document.getElementById("lookout").textContent = lookout;
+      document.getElementById("results").style.display = "block";
+    }
+  </script>
+</body>
+</html>
+
